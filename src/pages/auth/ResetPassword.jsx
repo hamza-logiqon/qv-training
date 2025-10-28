@@ -3,10 +3,14 @@ import { Button } from "@/components/ui/button";
 import { FcGoogle } from "react-icons/fc";
 import FormInput from "@/common/Input";
 import AuthLayout from "@/layout/Auth";
+import { useState } from "react";
+import SuccessModal from "@/common/SuccessModal";
 
 const ResetPassword = () => {
+  const [modal, setModal] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
+    setModal(true);
     // Handle login logic here
   };
   return (
@@ -36,10 +40,18 @@ const ResetPassword = () => {
             required
           />
 
-          <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-4 rounded-md">
+          <Button className="w-full bg-[#265ED4]  hover:bg-blue-700 text-white font-semibold mt-4 rounded-md">
             Reset Password
           </Button>
         </form>
+        <SuccessModal
+          open={modal}
+          onOpenChange={setModal}
+          title="Password Changed"
+          description="Your password has been changed successfully."
+          onContinue={"/login"}
+          buttonTitle={"Login Now"}
+        />
       </div>
     </AuthLayout>
   );

@@ -26,7 +26,7 @@ const ForgotPassword = () => {
             required
           />
 
-          <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-4 rounded-md">
+          <Button className="w-full bg-[#265ED4]  hover:bg-blue-700 text-white font-semibold mt-4 rounded-md">
             Send Code
           </Button>
         </form>

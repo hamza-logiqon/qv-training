@@ -2,11 +2,13 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import AuthLayout from "@/layout/Auth";
+import SuccessModal from "@/common/SuccessModal";
 
 const VerifyOtp = () => {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [timeLeft, setTimeLeft] = useState(60);
   const inputRefs = useRef([]);
+  const [modal, setModal] = useState(false);
 
   // Timer logic ⏱️
   useEffect(() => {
@@ -35,6 +37,7 @@ const VerifyOtp = () => {
   const handleVerify = () => {
     const code = otp.join("");
     console.log("Entered OTP:", code);
+    setModal(true);
     // TODO: call API to verify code
   };
 
@@ -72,7 +75,7 @@ const VerifyOtp = () => {
         {/* Verify button */}
         <Button
           onClick={handleVerify}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md"
+          className="w-full bg-[#265ED4]  hover:bg-blue-700 text-white font-semibold py-2 rounded-md"
         >
           Verify
         </Button>
@@ -93,6 +96,15 @@ const VerifyOtp = () => {
             </p>
           )}
         </div>
+        <SuccessModal
+          open={modal}
+          onOpenChange={setModal}
+          title="Your email has been verified!"
+          description="Welcome to Barbells&CoffeeClub. You’re all set to start your
+              fitness journey."
+          onContinue={"/login"}
+          buttonTitle={"Continue to Login"}
+        />
       </div>
     </AuthLayout>
   );
