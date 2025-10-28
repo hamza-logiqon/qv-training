@@ -1,0 +1,30 @@
+import { Card, CardContent } from "@/components/ui/card";
+import React from "react";
+
+const AuthLayout = ({ children }) => {
+  return (
+    <div className="flex  items-center">
+      {/* Left Section */}
+      <div className="w-full md:w-[40%] pl-6 py-10 ">
+        <div className="max-w-[530px] mx-auto">
+          {/* Logo */}
+          <div className="mb-8">
+            <img src="/logo.svg" alt="Logo" className="w-[60px]" />
+          </div>
+          <div className="flex flex-col items-center">{children}</div>
+        </div>
+      </div>
+
+      {/* Right Section */}
+      <CardContent className="hidden md:flex w-[60%] bg-gray-50 items-center justify-center min-h-screen">
+        <img
+          src="/main-new.png"
+          alt="Login Illustration"
+          className="max-w-sm"
+        />
+      </CardContent>
+    </div>
+  );
+};
+
+export default AuthLayout;
