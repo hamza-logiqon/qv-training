@@ -6,6 +6,7 @@ export const AUTH_ROUTES = {
   REGISTER: "/register",
   Verify_OTP: "/verify-otp",
   FORGOT_PASSWORD: "/forgot-password",
+  Reset_PASSWORD: "/reset-password",
 };
 
 //  App (protected) routes

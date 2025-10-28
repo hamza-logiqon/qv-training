@@ -46,9 +46,7 @@ const VerifyOtp = () => {
 
   return (
     <AuthLayout>
-       <div className="max-w-[378px]">
-     
-
+      <div className="max-w-[378px]">
         <h2 className="text-xl font-bold mb-2">Check your email!</h2>
         <p className="text-gray-600 text-sm mb-6">
           We’ve sent a 6-digit verification code to your email{" "}

@@ -9,7 +9,10 @@ import AuthLayout from "@/layout/Auth";
 
 const Login = () => {
   const [checked, setChecked] = useState(false);
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle login logic here
+  };
   return (
     <AuthLayout>
       <div className="max-w-[378px]">
@@ -24,7 +27,7 @@ const Login = () => {
         </p>
 
         {/* Form */}
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <FormInput
             id="email"
             label="Email"
@@ -54,6 +57,7 @@ const Login = () => {
               id="terms"
               checked={checked}
               onCheckedChange={setChecked}
+              required
             />
             <Label
               htmlFor="terms"

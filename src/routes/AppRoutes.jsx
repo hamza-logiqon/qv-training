@@ -3,6 +3,8 @@ import ROUTES from "@/lib/routes";
 import Login from "@/pages/auth/Login";
 import Register from "@/pages/auth/Register";
 import VerifyOtp from "@/pages/auth/VerifyOtp";
+import ForgotPassword from "@/pages/auth/ForgotPassword";
+import ResetPassword from "@/pages/auth/ResetPassword";
 
 export default function AppRoutes() {
   return (
@@ -17,8 +19,9 @@ export default function AppRoutes() {
         {/* Auth */}
         <Route path={ROUTES.LOGIN} element={<Login />} />
         <Route path={ROUTES.REGISTER} element={<Register />} />
-         <Route path={ROUTES.Verify_OTP} element={<VerifyOtp />} />
-        {/* <Route path={ROUTES.FORGOT_PASSWORD} element={<ForgotPasswordPage />} /> */}
+        <Route path={ROUTES.Verify_OTP} element={<VerifyOtp />} />
+        <Route path={ROUTES.FORGOT_PASSWORD} element={<ForgotPassword />} />
+        <Route path={ROUTES.Reset_PASSWORD} element={<ResetPassword />} />
 
         {/* Protected */}
         {/* <Route
