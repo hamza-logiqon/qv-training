@@ -17,7 +17,7 @@ const Register = () => {
         <h2 className="text-2xl font-bold mb-2">Create your free account</h2>
         <p className="text-gray-500 mb-6 text-sm">
           Already using Barbell&CoffeeClub?&nbsp;
-          <a href="#" className="text-blue-600 hover:underline">
+          <a href="/" className="text-blue-600 hover:underline">
             Login here
           </a>
         </p>
@@ -67,7 +67,7 @@ const Register = () => {
             </Label>
           </div>
 
-          <Button className="w-full bg-[#265ED4]  hover:bg-blue-700 text-white font-semibold mt-4 rounded-md">
+          <Button className="w-full bg-[#265ED4]  hover:bg-blue-700 text-white font-semibold mt-4 rounded-md cursor-pointer">
             Continue
           </Button>
 
@@ -79,7 +79,7 @@ const Register = () => {
 
           <Button
             variant="outline"
-            className="w-full flex items-center justify-center gap-2 border-gray-300 text-gray-700 hover:bg-gray-50"
+            className="w-full flex items-center justify-center gap-2 border-gray-300 text-gray-700 hover:bg-gray-50 cursor-pointer"
           >
             <FcGoogle size={22} /> Get Started with Google
           </Button>

@@ -2,7 +2,7 @@
 
 //  Auth routes
 export const AUTH_ROUTES = {
-  LOGIN: "/login",
+  LOGIN: "/",
   REGISTER: "/register",
   Verify_OTP: "/verify-otp",
   FORGOT_PASSWORD: "/forgot-password",

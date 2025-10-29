@@ -5,7 +5,7 @@ const AuthLayout = ({ children }) => {
   return (
     <div className="flex  items-center">
       {/* Left Section */}
-      <div className="w-full md:w-[40%] pl-6 py-10 ">
+      <div className="w-full md:w-[50%] px-6 py-10 ">
         <div className="max-w-[530px] mx-auto">
           {/* Logo */}
           <div className="mb-8">
@@ -16,11 +16,11 @@ const AuthLayout = ({ children }) => {
       </div>
 
       {/* Right Section */}
-      <CardContent className="hidden md:flex w-[60%] bg-gray-50 items-center justify-center min-h-screen">
+      <CardContent className="hidden md:flex w-[50%] bg-gray-50 items-center justify-center min-h-screen">
         <img
           src="/main-new.png"
           alt="Login Illustration"
-          className="max-w-sm"
+          className="xl:max-w-lg"
         />
       </CardContent>
     </div>

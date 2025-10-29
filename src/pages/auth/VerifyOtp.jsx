@@ -75,7 +75,7 @@ const VerifyOtp = () => {
         {/* Verify button */}
         <Button
           onClick={handleVerify}
-          className="w-full bg-[#265ED4]  hover:bg-blue-700 text-white font-semibold py-2 rounded-md"
+          className="w-full bg-[#265ED4]  hover:bg-blue-700 text-white font-semibold py-2 rounded-md cursor-pointer"
         >
           Verify
         </Button>
@@ -89,7 +89,7 @@ const VerifyOtp = () => {
               Didn’t receive a 6 digit code?{" "}
               <button
                 onClick={handleResend}
-                className="text-blue-600 hover:underline font-medium"
+                className="text-blue-600 hover:underline font-medium cursor-pointer"
               >
                 Resend code
               </button>
@@ -102,7 +102,7 @@ const VerifyOtp = () => {
           title="Your email has been verified!"
           description="Welcome to Barbells&CoffeeClub. You’re all set to start your
               fitness journey."
-          onContinue={"/login"}
+          onContinue={"/"}
           buttonTitle={"Continue to Login"}
         />
       </div>

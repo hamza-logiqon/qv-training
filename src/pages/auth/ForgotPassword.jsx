@@ -2,6 +2,7 @@ import FormInput from "@/common/Input";
 import { Button } from "@/components/ui/button";
 import AuthLayout from "@/layout/Auth";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ForgotPassword = () => {
   return (
@@ -26,13 +27,16 @@ const ForgotPassword = () => {
             required
           />
 
-          <Button className="w-full bg-[#265ED4]  hover:bg-blue-700 text-white font-semibold mt-4 rounded-md">
-            Send Code
+          <Button
+            asChild
+            className="w-full bg-[#265ED4]  hover:bg-blue-700 text-white font-semibold mt-4 rounded-md cursor-pointer"
+          >
+            <Link to={"/verify-otp"}> Send Code</Link>
           </Button>
         </form>
         <p className="text-gray-500 mt-3 text-sm text-center">
           Already have your password?&nbsp;
-          <a href="#" className="text-blue-600 hover:underline">
+          <a href="/" className="text-blue-600 hover:underline">
             Log in
           </a>
         </p>

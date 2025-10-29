@@ -6,6 +6,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const SuccessModal = ({
   open,
@@ -34,10 +35,11 @@ const SuccessModal = ({
           </DialogHeader>
 
           <Button
+            asChild
             onClick={onContinue}
             className="bg-[#265ED4]  hover:bg-blue-700 text-white font-medium rounded-md w-full mt-6 max-w-xs cursor-pointer"
           >
-            {buttonTitle}
+            <Link to={onContinue}>{buttonTitle}</Link>
           </Button>
         </div>
       </DialogContent>
