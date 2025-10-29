@@ -18,7 +18,7 @@ const AuthLayout = ({ children }) => {
       {/* Right Section */}
       <CardContent className="hidden md:flex w-[50%] bg-gray-50 items-center justify-center min-h-screen">
         <img
-          src="/main-new.png"
+          src="/auth-card-2.png"
           alt="Login Illustration"
           className="xl:max-w-lg"
         />
