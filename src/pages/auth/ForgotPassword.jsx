@@ -2,9 +2,14 @@ import FormInput from "@/common/Input";
 import { Button } from "@/components/ui/button";
 import AuthLayout from "@/layout/Auth";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ForgotPassword = () => {
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/verify-otp?mode=redirect");
+  };
   return (
     <AuthLayout>
       <div className="max-w-[378px]">
@@ -18,7 +23,7 @@ const ForgotPassword = () => {
         </p>
 
         {/* Form */}
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <FormInput
             id="email"
             label="Email"
@@ -27,11 +32,8 @@ const ForgotPassword = () => {
             required
           />
 
-          <Button
-            asChild
-            className="w-full bg-[#265ED4]  hover:bg-blue-700 text-white font-semibold mt-4 rounded-md cursor-pointer"
-          >
-            <Link to={"/verify-otp"}> Send Code</Link>
+          <Button className="w-full bg-[#265ED4]  hover:bg-blue-700 text-white font-semibold mt-4 rounded-md cursor-pointer">
+            Send Code
           </Button>
         </form>
         <p className="text-gray-500 mt-3 text-sm text-center">

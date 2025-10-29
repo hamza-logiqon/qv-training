@@ -49,7 +49,7 @@ const ResetPassword = () => {
           onOpenChange={setModal}
           title="Password Changed"
           description="Your password has been changed successfully."
-          onContinue={"/login"}
+          onContinue={"/"}
           buttonTitle={"Login Now"}
         />
       </div>

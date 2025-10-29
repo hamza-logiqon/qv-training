@@ -3,12 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import AuthLayout from "@/layout/Auth";
 import SuccessModal from "@/common/SuccessModal";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const VerifyOtp = () => {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [timeLeft, setTimeLeft] = useState(60);
   const inputRefs = useRef([]);
   const [modal, setModal] = useState(false);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode"); // "redirect" or "modal"
+  const navigate = useNavigate();
 
   // Timer logic ⏱️
   useEffect(() => {
@@ -37,7 +41,11 @@ const VerifyOtp = () => {
   const handleVerify = () => {
     const code = otp.join("");
     console.log("Entered OTP:", code);
-    setModal(true);
+    if (mode === "redirect") {
+      navigate("/reset-password");
+    } else if (mode === "modal") {
+      setModal(true);
+    }
     // TODO: call API to verify code
   };
 

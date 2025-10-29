@@ -6,10 +6,15 @@ import { Label } from "@/components/ui/label";
 import { FcGoogle } from "react-icons/fc";
 import FormInput from "@/common/Input";
 import AuthLayout from "@/layout/Auth";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [checked, setChecked] = useState(false);
-
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/verify-otp?mode=modal");
+  };
   return (
     <AuthLayout>
       <div className="max-w-[378px]">
@@ -23,7 +28,7 @@ const Register = () => {
         </p>
 
         {/* Form */}
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <FormInput
             id="email"
             label="Email"
@@ -51,6 +56,7 @@ const Register = () => {
               id="terms"
               checked={checked}
               onCheckedChange={setChecked}
+              required
             />
             <Label
               htmlFor="terms"
@@ -68,7 +74,7 @@ const Register = () => {
           </div>
 
           <Button className="w-full bg-[#265ED4]  hover:bg-blue-700 text-white font-semibold mt-4 rounded-md cursor-pointer">
-            Continue
+             Continue
           </Button>
 
           <div className="flex items-center my-4">
